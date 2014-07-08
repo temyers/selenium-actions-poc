@@ -8,7 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<selenium.version>2.41.0</selenium.version>
+		<selenium.version>2.42.2</selenium.version>
 
 		<java.source>1.7</java.source>
 		<java.target>1.7</java.target>
@@ -39,6 +39,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
