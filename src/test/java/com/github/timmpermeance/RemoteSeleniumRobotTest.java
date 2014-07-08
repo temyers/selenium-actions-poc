@@ -15,7 +15,6 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -53,8 +52,6 @@ public class RemoteSeleniumRobotTest {
 
     @Before
     public void setup() throws Exception {
-        FirefoxProfile profile = new FirefoxProfile();
-
         // Chrome uses a remote driver executable which makes it good for intercepting commands for
         // prototyping.
         DesiredCapabilities capabilities = new DesiredCapabilities("robotChrome", "", Platform.ANY);
