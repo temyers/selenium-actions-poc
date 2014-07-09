@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -24,7 +25,13 @@ import org.seleniumhq.jetty7.server.handler.DefaultHandler;
 import org.seleniumhq.jetty7.server.handler.HandlerList;
 import org.seleniumhq.jetty7.server.handler.ResourceHandler;
 
+import com.github.timmpermeance.test.RepeatRule;
+
 public class RemoteSeleniumRobotTest {
+
+    @Rule
+    public RepeatRule repeatRule = new RepeatRule();
+
     private WebDriver driver;
 
     private static Server server;
@@ -54,8 +61,8 @@ public class RemoteSeleniumRobotTest {
     public void setup() throws Exception {
         // Chrome uses a remote driver executable which makes it good for intercepting commands for
         // prototyping.
-        DesiredCapabilities capabilities = new DesiredCapabilities("robotChrome", "", Platform.ANY);
-        URL gridHub = new URL("http://localhost:4444/wd/hub/");
+        DesiredCapabilities capabilities = new DesiredCapabilities("robotChrome", "", Platform.MAC);
+        URL gridHub = new URL("http://10.25.67.130:4444/wd/hub/");
         driver = new RemoteWebDriver(gridHub, capabilities);
 
         // driver = new FirefoxDriver();
