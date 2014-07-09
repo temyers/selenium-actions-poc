@@ -62,7 +62,7 @@ public class RemoteSeleniumRobotTest {
         // Chrome uses a remote driver executable which makes it good for intercepting commands for
         // prototyping.
         DesiredCapabilities capabilities = new DesiredCapabilities("robotChrome", "", Platform.MAC);
-        URL gridHub = new URL("http://10.25.67.130:4444/wd/hub/");
+        URL gridHub = new URL("http://localhost:4444/wd/hub/");
         driver = new RemoteWebDriver(gridHub, capabilities);
 
         // driver = new FirefoxDriver();
